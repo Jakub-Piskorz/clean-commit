@@ -4,7 +4,7 @@ type: page
 title: Henlo
 links:
   - link:
-      content: Documentation
+      content: dddd
       url: https://github.com/clean-commit/gatsby-starter-henlo#readme
   - link:
       content: Clean Commit

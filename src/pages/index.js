@@ -4,6 +4,7 @@ import ReactSVG from 'react-svg'
 import Layout from '@/components/Layout'
 import GitHubButton from 'react-github-btn'
 
+
 export const HomePageTemplate = ({ data }) => {
   return (
     <>
@@ -25,7 +26,7 @@ export const HomePageTemplate = ({ data }) => {
 
             {data.links.length > 0 ? <div className="links">
               {
-                data.links.map(({ link: link }, i) => {
+                data.links.map(({link: link}, i) => {
                   return <a href={link.url} key={i} target="_blank" className="links__item">{link.content}</a>
                 })
               }
