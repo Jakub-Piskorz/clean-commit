@@ -131,6 +131,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Ubuntu',
         'Wotfard',
         'system-ui',
         '-apple-system',
