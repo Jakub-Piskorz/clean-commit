@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter",
-  "description": "Clean starter for gatsby website, with image optimization and GDPR cookies",
+  "name": "Hotely",
+  "description": "Recruitment task for Clean-Commit",
   "version": "0.3.0",
-  "author": "Wojciech Kałużny",
+  "author": "Jakub Piskorz",
   "dependencies": {
     "classnames": "^2.2.6",
     "gatsby": "^2.23.1",

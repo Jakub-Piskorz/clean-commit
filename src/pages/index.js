@@ -18,7 +18,6 @@ const HomePage = ({ data }) => {
             fluid={data.file.childImageSharp.fluid}
           />
         </div>
-
         <nav>
           <h1 className="nav-left">Hotely</h1>
           <ul className="nav-right">
@@ -47,17 +46,6 @@ HomePage.propTypes = {
 
 export const pageQuery = graphql`
   query HomePageTemplate {
-    markdownRemark(frontmatter: { template: { eq: "index" } }) {
-      frontmatter {
-        title
-        links {
-          link {
-            content
-            url
-          }
-        }
-      }
-    }
     file(base: { eq: "hotel-main.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 1920) {
