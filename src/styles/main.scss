@@ -1,19 +1,56 @@
 @tailwind base;
 @tailwind components;
 
-@import 'base/typography';
+@import "base/typography";
 
-@import 'common/global';
-@import 'common/fonts';
-@import 'common/buttons';
-@import 'common/forms';
-@import 'common/buttons';
+@import "common/global";
+@import "common/fonts";
+@import "common/buttons";
+@import "common/forms";
+@import "common/buttons";
 
-@import 'layout/footer';
-@import 'layout/navigation';
+@import "layout/footer";
+@import "layout/navigation";
 
-@import 'pages/page';
+@import "pages/page";
 
-@import 'base/helpers';
+@import "base/helpers";
 
 @tailwind utilities;
+
+body {
+  @apply box-border;
+}
+
+nav {
+  @apply grid grid-cols-12 pt-20 w-main mx-auto text-white;
+  .nav-left {
+    @apply text-h4 col-span-6 items-center;
+  }
+  .nav-right {
+    @apply col-span-6 flex justify-between items-center;
+    li {
+      @apply font-normal;
+    }
+    .login {
+      @apply border-white border-solid border rounded-lg py-5 px-10;
+    }
+  }
+}
+
+.section-one {
+  @apply grid grid-cols-12 w-main mx-auto flex-grow;
+}
+
+.top-screen {
+  @apply relative h-screen overflow-hidden flex flex-col;
+  .bg {
+    @apply absolute z-m10 h-auto mx-auto justify-center right-0 min-w-full;
+    width: 1920px;
+  }
+  .hotel-form {
+    @apply self-center h-56 col-span-5 bg-white rounded-xl;
+  }
+  .icon1 {
+  }
+}

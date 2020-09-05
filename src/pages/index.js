@@ -1,17 +1,39 @@
 import React from "react";
+import Helmet from "react-helmet";
 import PropTypes from "prop-types";
 import Layout from "@/components/Layout";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
+import DefaultSEO from "@/components/DefaultSEO";
+import "@/styles/main.scss";
 
 const HomePage = ({ data }) => {
   return (
-    <Layout>
-      <main className="mx-auto max-w-4xl px-6">
-        <h1 className="font-bold text-h4 mb-5 font-sans">Hotely</h1>
-        <Img fluid={data.file.childImageSharp.fluid} />
-      </main>
-    </Layout>
+    <>
+      <DefaultSEO />
+      <div className="top-screen">
+        <div className="bg">
+          <Img
+            className="z-0 select-none"
+            fluid={data.file.childImageSharp.fluid}
+          />
+        </div>
+
+        <nav>
+          <h1 className="nav-left">Hotely</h1>
+          <ul className="nav-right">
+            <li>Home</li>
+            <li>Find Hotel</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li className="login">Login</li>
+          </ul>
+        </nav>
+        <div className="section-one">
+          <div className="hotel-form"></div>
+        </div>
+      </div>
+    </>
   );
 };
 
@@ -38,7 +60,7 @@ export const pageQuery = graphql`
     }
     file(base: { eq: "hotel-main.jpeg" }) {
       childImageSharp {
-        fluid(maxWidth: 700) {
+        fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid
         }
       }
