@@ -23,17 +23,17 @@ body {
 }
 
 nav {
-  @apply grid grid-cols-12 pt-20 w-main mx-auto text-white;
+  @apply grid grid-cols-12 pt-20 w-main mx-auto text-white tracking-wide;
   .nav-left {
-    @apply text-h4 col-span-6 items-center;
+    @apply flex text-h5 font-bold col-span-5 items-center;
   }
   .nav-right {
-    @apply col-span-6 flex justify-between items-center;
+    @apply col-span-7 flex justify-between items-center;
     li {
       @apply font-normal;
     }
     .login {
-      @apply border-white border-solid border rounded-lg py-5 px-10;
+      @apply border-white border-solid border rounded-lg py-5 px-10 font-medium ;
     }
   }
 }
@@ -45,8 +45,10 @@ nav {
 .top-screen {
   @apply relative h-screen overflow-hidden flex flex-col;
   .bg {
-    @apply absolute z-m10 h-auto mx-auto justify-center right-0 min-w-full;
-    width: 1920px;
+    @apply absolute z-m10 h-auto mx-auto justify-center min-w-full;
+    min-width: 110vw;
+    width: 2050px;
+    right: -10%;
   }
   .hotel-form {
     @apply self-center h-56 col-span-5 bg-white rounded-xl;
