@@ -33,7 +33,7 @@ nav {
       @apply font-normal;
     }
     .login {
-      @apply border-white border-solid border rounded-lg py-5 px-10 font-medium ;
+      @apply border-white border-solid border rounded-lg py-5 px-10 font-medium;
     }
   }
 }
@@ -51,7 +51,27 @@ nav {
     right: -10%;
   }
   .hotel-form {
-    @apply self-center h-56 col-span-5 bg-white rounded-xl;
+    @apply self-center col-span-5 bg-white rounded-xl p-10;
+    label {
+      @apply font-bold leading-10;
+    }
+    .col-2 {
+      @apply grid grid-cols-2 gap-8;
+    }
+    input[type="text"],
+    select {
+      @apply p-6 mb-2 rounded-xl w-full;
+      background-color: #f1f1f1;
+    }
+    .react-datepicker-wrapper {
+      @apply w-full;
+    }
+    input[type="checkbox"] {
+      @apply mr-4 mb-6 font-bold;
+    }
+    .submit {
+      @apply bg-orange-500 w-full text-white font-normal p-6 rounded-xl;
+    }
   }
   .icon1 {
   }
