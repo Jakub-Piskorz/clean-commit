@@ -8,8 +8,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import "@/styles/main.scss";
 
 const HomePage = ({ data }) => {
+  // Setting states for calendars in form.
+  // checkIn = today; checkOut = today + 3 days;
   const [checkIn, setCheckIn] = useState(new Date());
-  const [checkOut, setCheckOut] = useState(new Date());
+  const [checkOut, setCheckOut] = useState(
+    new Date().setDate(new Date().getDate() + 3)
+  );
+
   return (
     <>
       <DefaultSEO />
@@ -33,46 +38,63 @@ const HomePage = ({ data }) => {
         <div className="section-one">
           <div className="hotel-form">
             <form action="/action_page.php">
-              <label htmlFor="fname">Where you go?</label>
+              <label htmlFor="location">Where you go?</label>
               <br />
-              <input
-                type="text"
-                id="fname"
-                name="location"
-                placeholder='try "Singapore"'
-              />
-              <br />
+              <div id="location-wrapper">
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  placeholder='try "Singapore"'
+                />
+                <i />
+              </div>
               <div className="col-2">
                 <div>
                   <label htmlFor="check-in">Check In</label>
                   <br />
-                  <DatePicker
-                    selected={checkIn}
-                    onChange={date => setCheckIn(date)}
-                  />
+                  <div id="check-in-wrapper">
+                    <DatePicker
+                      selected={checkIn}
+                      onChange={date => setCheckIn(date)}
+                      dateFormat="dd MMM"
+                    />
+                    <i />
+                  </div>
                 </div>
                 <div>
                   <label htmlFor="check-out">Check Out</label>
-                  <DatePicker
-                    selected={checkOut}
-                    onChange={date => setCheckOut(date)}
-                  />
+                  <div id="check-out-wrapper">
+                    <DatePicker
+                      selected={checkOut}
+                      onChange={date => setCheckOut(date)}
+                      dateFormat="dd MMM"
+                    />
+                    <i />
+                  </div>
                 </div>
               </div>
               <label for="guests-select">Guest</label>
-              <select
-                name="guests"
-                placeholder="How many guest ?"
-                id="guests-select"
-              >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="group">Group (5-20)</option>
-              </select>
-              <input type="checkbox" value="pay" name="pay" />
-              <label for="pay">Pay when checking in?</label>
+              <br />
+              <div id="guests-wrapper">
+                <select
+                  name="guests"
+                  placeholder="How many guest ?"
+                  id="guests-select"
+                >
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="group">Group (5-20)</option>
+                </select>
+                <i />
+              </div>
+              <label id="pay-wrapper" for="pay">
+                <input type="checkbox" id="pay" value="pay" name="pay" />
+                <span id="pay-icon"></span>Pay when checking in?
+              </label>
               <br />
               <input type="submit" className="submit" value="Search Hotel" />
             </form>

@@ -8,7 +8,11 @@ const Picker = () => {
 
   return (
     <div className="h-screen w-full bg-blue-500 flex items-center justify-center">
-      <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+      <DatePicker
+        selected={startDate}
+        dateFormat="yyyy/MM/dd"
+        onChange={date => setStartDate(date)}
+      />
     </div>
   );
 };

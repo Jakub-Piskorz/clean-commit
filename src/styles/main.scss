@@ -39,7 +39,7 @@ nav {
 }
 
 .section-one {
-  @apply grid grid-cols-12 w-main mx-auto flex-grow;
+  @apply w-main mx-auto flex flex-grow;
 }
 
 .top-screen {
@@ -50,8 +50,10 @@ nav {
     width: 2050px;
     right: -10%;
   }
+  //=== FORM ===
   .hotel-form {
-    @apply self-center col-span-5 bg-white rounded-xl p-10;
+    @apply self-center max-w-full bg-white rounded-xl p-10;
+    width: 487px;
     label {
       @apply font-bold leading-10;
     }
@@ -60,19 +62,84 @@ nav {
     }
     input[type="text"],
     select {
-      @apply p-6 mb-2 rounded-xl w-full;
+      @apply p-6 pr-20 mb-2 rounded-xl w-full appearance-none;
       background-color: #f1f1f1;
+      -webkit-appearance: none;
+      -moz-appearance: none;
     }
     .react-datepicker-wrapper {
       @apply w-full;
     }
-    input[type="checkbox"] {
-      @apply mr-4 mb-6 font-bold;
+    // A lot of pixel-perfect icon crafting below:
+    #location-wrapper,
+    #check-in-wrapper,
+    #check-out-wrapper,
+    #guests-wrapper {
+      position: relative;
+      i {
+        right: 15px;
+        top: 12px;
+        display: inline-block;
+        position: absolute;
+        width: 10px;
+        height: 50px;
+        width: 50px;
+        user-select: none;
+      }
+    }
+    #location-wrapper i {
+      background: url("../img/pin.png") no-repeat center;
+    }
+    #check-in-wrapper i {
+      background: url("../img/calendar.png") no-repeat center;
+    }
+    #check-out-wrapper i {
+      background: url("../img/calendar.png") no-repeat center;
+    }
+    #guests-wrapper i {
+      background: url("../img/down.png") no-repeat center;
+    }
+    #pay-wrapper {
+      @apply font-medium;
+      position: relative;
+      input[type="checkbox"] {
+        @apply mr-4 ml-2 mb-8 mt-6;
+      }
+    }
+    #pay-icon {
+      @apply rounded-md bg-white;
+      position: absolute;
+      top: -3px;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      border: 2px #85c7d3 solid;
+    }
+    #pay-wrapper input:checked ~ #pay-icon {
+      background-color: #85c7d3;
+    }
+    #pay-icon:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 7px;
+      top: 3px;
+      width: 7px;
+      height: 12px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    input:checked ~ #pay-icon:after {
+      display: block;
     }
     .submit {
-      @apply bg-orange-500 w-full text-white font-normal p-6 rounded-xl;
+      @apply bg-orange-500 w-full text-white font-bold p-6 rounded-xl;
     }
   }
+  //=== END OF FORM ===
   .icon1 {
   }
 }
