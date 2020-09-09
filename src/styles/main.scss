@@ -43,7 +43,7 @@ nav {
 }
 
 .top-screen {
-  @apply relative h-screen overflow-hidden flex flex-col;
+  @apply relative overflow-hidden flex flex-col;
   .bg {
     @apply absolute z-m10 h-auto mx-auto justify-center min-w-full;
     min-width: 110vw;
@@ -52,7 +52,7 @@ nav {
   }
   //=== FORM ===
   .hotel-form {
-    @apply self-center max-w-full bg-white rounded-xl p-10;
+    @apply self-center max-w-full bg-white rounded-xl p-10 mb-24 mt-32;
     width: 487px;
     label {
       @apply font-bold leading-10;
@@ -96,7 +96,7 @@ nav {
     #check-out-wrapper i {
       background: url("../img/calendar.png") no-repeat center;
     }
-    #guests-wrapper i {
+    #guests-wrapper span {
       background: url("../img/down.png") no-repeat center;
     }
     #pay-wrapper {
@@ -107,16 +107,16 @@ nav {
       }
     }
     #pay-icon {
-      @apply rounded-md bg-white;
+      @apply rounded-md bg-white border-green-soft border-solid;
+      border-width: 2px;
       position: absolute;
       top: -3px;
       left: 0;
       height: 25px;
       width: 25px;
-      border: 2px #85c7d3 solid;
     }
     #pay-wrapper input:checked ~ #pay-icon {
-      background-color: #85c7d3;
+      @apply bg-green-soft;
     }
     #pay-icon:after {
       content: "";
@@ -136,7 +136,7 @@ nav {
       display: block;
     }
     .submit {
-      @apply bg-orange-500 w-full text-white font-bold p-6 rounded-xl;
+      @apply bg-orange-main w-full text-white font-bold p-6 rounded-xl;
     }
   }
   //=== END OF FORM ===

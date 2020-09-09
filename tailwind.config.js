@@ -16,7 +16,6 @@ module.exports = {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-
       black: "#000",
       white: "#fff",
       "grey-darker": "#434343",
@@ -33,7 +32,8 @@ module.exports = {
         600: "#718096",
         700: "#4a5568",
         800: "#2d3748",
-        900: "#1a202c"
+        900: "#1a202c",
+        main: "#888888"
       },
       red: {
         100: "#fff5f5",
@@ -55,7 +55,8 @@ module.exports = {
         600: "#dd6b20",
         700: "#c05621",
         800: "#9c4221",
-        900: "#7b341e"
+        900: "#7b341e",
+        main: "#F2994A"
       },
       yellow: {
         100: "#fffff0",
@@ -77,7 +78,9 @@ module.exports = {
         600: "#38a169",
         700: "#2f855a",
         800: "#276749",
-        900: "#22543d"
+        900: "#22543d",
+        bg: "#F3F9FB",
+        soft: "#85C7D3"
       },
       teal: {
         100: "#e6fffa",
