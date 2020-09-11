@@ -36,6 +36,63 @@ const HomePage = ({ data }) => {
           </ul>
         </nav>
         <div className="section-one">
+          <div id="icon1">
+            <Img
+              className="mr-10"
+              style={{ minWidth: "90px" }}
+              fluid={data.heart2.childImageSharp.fluid}
+            />
+          </div>
+          <div id="icon2">
+            <svg
+              width="239"
+              height="157"
+              viewBox="0 0 239 157"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M217 8H22C14.268 8 8 14.268 8 22V115.355C8 121.125 12.6768 125.801 18.446 125.801C23.4201 125.801 27.7043 129.309 28.6864 134.185L30.5748 143.562C31.5386 148.348 37.5098 150.041 40.8418 146.473L55.996 130.246C58.6436 127.411 62.3488 125.801 66.2279 125.801H217C224.732 125.801 231 119.533 231 111.801V22C231 14.268 224.732 8 217 8Z"
+                fill="white"
+              />
+              <path
+                d="M217 4H22C12.0589 4 4 12.0589 4 22V115.355C4 123.334 10.4677 129.801 18.446 129.801C21.5154 129.801 24.1591 131.966 24.7651 134.975L26.6535 144.352C28.2599 152.328 38.2118 155.149 43.7652 149.203L58.9194 132.976C60.8105 130.951 63.4571 129.801 66.2279 129.801H217C226.941 129.801 235 121.742 235 111.801V22C235 12.0589 226.941 4 217 4Z"
+                stroke="white"
+                stroke-opacity="0.3"
+                stroke-width="8"
+              />
+            </svg>
+            <p>This hotel is like paradise! </p>
+          </div>
+          <div id="icon3">
+            <svg
+              width="215"
+              height="124"
+              viewBox="0 0 215 124"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 6H199C204.523 6 209 10.4772 209 16V90.3184C209 95.533 204.773 99.7603 199.558 99.7603C194.344 99.7603 190.116 103.988 190.116 109.202V113.904C190.116 117.385 185.978 119.205 183.413 116.852L168.79 103.442C166.208 101.074 162.832 99.7603 159.328 99.7603H16C10.4772 99.7603 6 95.2831 6 89.7603V16C6 10.4772 10.4772 6 16 6Z"
+                fill="white"
+                fill-opacity="0.8"
+              />
+              <path
+                d="M16 3H199C206.18 3 212 8.8203 212 16V90.3184C212 97.1899 206.43 102.76 199.558 102.76C196 102.76 193.116 105.644 193.116 109.202V113.904C193.116 119.996 185.874 123.18 181.385 119.063L166.763 105.653C164.734 103.793 162.081 102.76 159.328 102.76H16C8.8203 102.76 3 96.94 3 89.7603V16C3 8.8203 8.8203 3 16 3Z"
+                stroke="white"
+                stroke-opacity="0.4"
+                stroke-width="6"
+              />
+            </svg>
+
+            <p>Extraordinary, very comfortable!</p>
+          </div>
+          <div id="icon4">
+            <Img
+              style={{ minWidth: "115px" }}
+              fluid={data.heart2.childImageSharp.fluid}
+            />
+          </div>
           <div className="hotel-form">
             <form action="/action_page.php">
               <label htmlFor="location">Where you go?</label>
@@ -107,7 +164,11 @@ const HomePage = ({ data }) => {
       </div>
       <div className="right-banner">
         <div className="col-3">
-          <Img fluid={data.heart.childImageSharp.fluid} />
+          <Img
+            className="mr-10"
+            style={{ minWidth: "90px" }}
+            fluid={data.heart.childImageSharp.fluid}
+          />
           <h4 className="big">Take less than 1 Minutes to book a room</h4>
           <p>
             Suspendisse tristique porttitor vel iaculis iaculis nec imperdiet.
@@ -188,7 +249,29 @@ export const pageQuery = graphql`
     }
     heart: file(base: { eq: "heart.png" }) {
       childImageSharp {
-        fluid(maxWidth: 200) {
+        fluid(maxWidth: 120) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    cloud1: file(base: { eq: "cloud1.svg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    cloud2: file(base: { eq: "cloud2.svg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    heart2: file(base: { eq: "heart2.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 150) {
           ...GatsbyImageSharpFluid
         }
       }
