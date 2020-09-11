@@ -22,6 +22,10 @@ body {
   @apply box-border;
 }
 
+p {
+  @apply leading-8 tracking-wide;
+}
+
 nav {
   @apply grid grid-cols-12 pt-20 w-main mx-auto text-white tracking-wide;
   .nav-left {
@@ -38,6 +42,10 @@ nav {
   }
 }
 
+.orange-btn {
+  @apply bg-orange-main w-full text-white leading-8 font-bold p-6 rounded-xl;
+}
+
 .section-one {
   @apply w-main mx-auto flex flex-grow;
 }
@@ -52,7 +60,7 @@ nav {
   }
   //=== FORM ===
   .hotel-form {
-    @apply self-center max-w-full bg-white rounded-xl p-10 mb-24 mt-32;
+    @apply self-center max-w-full bg-white rounded-xl p-10 mt-32 mb-64 ml-0 mr-auto;
     width: 487px;
     label {
       @apply font-bold leading-10;
@@ -135,11 +143,71 @@ nav {
     input:checked ~ #pay-icon:after {
       display: block;
     }
-    .submit {
-      @apply bg-orange-main w-full text-white font-bold p-6 rounded-xl;
-    }
   }
   //=== END OF FORM ===
-  .icon1 {
+}
+.right-banner {
+  @apply w-main-plus ml-auto mr-0 bg-green-bg rounded-l-2xl p-20 pr-24 z-20;
+  transform: translateY(-10rem);
+  margin-bottom: -5rem;
+  .col-3 {
+    @apply flex flex-row items-center;
+    .gatsby-image-wrapper {
+      @apply mr-10;
+      min-width: 90px;
+    }
+    .big {
+      @apply mr-10 text-h4 font-bold text-green-soft w-3/4;
+    }
+    p {
+      @apply text-green-soft;
+    }
+  }
+}
+#about-us {
+  @apply w-main h-screen pb-16 bg-white z-0 mx-auto;
+  .col-2 {
+    @apply flex flex-row w-full mx-auto;
+    .images {
+      @apply pr-16 pt-16 pb-16 relative;
+      width: 50%;
+      max-width: 600px;
+      #decoration {
+        @apply absolute top-0 right-0 w-40 h-40;
+      }
+      #orange {
+        @apply absolute bottom-0 right-0 w-56;
+        img {
+          @apply rounded-lg;
+        }
+      }
+    }
+    .content {
+      @apply flex flex-col items-start justify-center w-auto pl-24 pt-20 pr-10;
+      max-width: 60%;
+      .orange-btn {
+        @apply py-4;
+      }
+      p {
+        @apply text-grey-dark;
+      }
+      h2 {
+        @apply mb-8 text-h3 font-bold;
+        color: #273029;
+      }
+
+      button {
+        @apply w-auto mt-10;
+      }
+      .points {
+        @apply my-8 h-auto inline-block;
+        div {
+          @apply inline-flex items-center float-left mr-6;
+          h3 {
+            @apply float-left text-h5 font-bold mr-2 text-green-soft;
+          }
+        }
+      }
+    }
   }
 }

@@ -451,7 +451,9 @@ module.exports = {
       "11/12": "91.666667%",
       full: "100%",
       screen: "100vw",
-      main: "81%"
+      main: "81%",
+      "main-plus": "90.5%",
+      "main-minus": "9.5%"
     }),
     zIndex: {
       auto: "auto",
