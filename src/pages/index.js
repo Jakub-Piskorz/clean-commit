@@ -285,7 +285,7 @@ export const pageQuery = graphql`
     }
     orangeRoom: file(base: { eq: "orange-room.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
+        fluid(maxWidth: 250) {
           ...GatsbyImageSharpFluid
         }
       }
