@@ -35,7 +35,7 @@ const HomePage = ({ data }) => {
             <li className="login">Login</li>
           </ul>
         </nav>
-        <div className="section-one">
+        <div id="home">
           <div id="icon1">
             <Img
               className="mr-10"
@@ -226,6 +226,41 @@ const HomePage = ({ data }) => {
           </div>
         </div>
       </div>
+      <div className="bg-green-bg w-full">
+        <div id="sanghai">
+          <div className="col-left">
+            <h2>Sanghai Hotel</h2>
+            <span className="subtext">Sanghai, China</span>
+            <p>
+              Ullamcorper cras imperdiet eu feugiat viverra pulvinar. Gravida
+              integer tincidunt pretium dis fames porttitor velit. Volutpat
+              tincidunt{" "}
+            </p>
+            <button className="orange-btn">Book Now</button>
+            <div className="not-btn">
+              <span>$50</span>/Night
+            </div>
+          </div>
+          <div className="col-right">
+            <Img
+              className="pic"
+              fluid={data.sanghai.childImageSharp.fluid}
+            ></Img>
+          </div>
+        </div>
+        <div id="blue-box-wrapper">
+          <div className="decor">
+            <Img fluid={data.dec.childImageSharp.fluid} />
+          </div>
+          <div id="blue-box">
+            <p>
+              Convallis posuere nec convallis nec porta eleifend. Nam ornare sit
+              pellentesque sapien senectus viverra vitae.
+            </p>
+            <h5>Robert Rene</h5>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
@@ -238,6 +273,8 @@ HomePage.propTypes = {
   })
 };
 
+// Warning: spaghetti code. My graphql knowledge is pretty basic,
+//but if I can query it easier, please let me know.
 export const pageQuery = graphql`
   query HomePageTemplate {
     background: file(base: { eq: "hotel-main.jpeg" }) {
@@ -293,6 +330,13 @@ export const pageQuery = graphql`
     dec: file(base: { eq: "decoration.png" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    sanghai: file(base: { eq: "sanghai.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid
         }
       }

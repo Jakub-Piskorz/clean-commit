@@ -26,6 +26,10 @@ p {
   @apply leading-8 tracking-wide;
 }
 
+.subtext {
+  @apply text-green-soft text-sm;
+}
+
 nav {
   @apply grid grid-cols-12 pt-20 w-main mx-auto text-white tracking-wide;
   .nav-left {
@@ -45,8 +49,14 @@ nav {
 .orange-btn {
   @apply bg-orange-main w-full text-white leading-8 font-bold p-6 rounded-xl;
 }
+.not-btn {
+  @apply px-10 py-4 inline;
+  span {
+    @apply font-bold text-h5;
+  }
+}
 
-.section-one {
+#home {
   @apply w-main mx-auto flex flex-grow relative;
   #icon1 {
     @apply absolute w-24 z-0;
@@ -231,6 +241,46 @@ nav {
           }
         }
       }
+    }
+  }
+}
+#sanghai {
+  @apply flex flex-row w-main-plus ml-auto mr-0 pt-40;
+  h2 {
+    @apply text-h4 font-bold mt-2;
+  }
+  p {
+    @apply my-6 text-grey-dark;
+  }
+  .col-left {
+    @apply h-full pr-12 w-auto;
+    .orange-btn {
+      @apply w-auto py-4 px-12 mt-8;
+    }
+    .not-btn {
+      @apply mt-8;
+    }
+  }
+  .col-right {
+    max-width: 68%;
+    .pic {
+      @apply rounded-l-xl;
+      width: 905px;
+      max-width: 100%;
+    }
+  }
+}
+#blue-box-wrapper {
+  @apply grid w-main grid-cols-5 mx-auto relative;
+  .decor {
+    @apply col-start-1 col-end-2 absolute w-full;
+    transform: translateY(50%);
+  }
+  #blue-box {
+    @apply pl-12 pr-10 pb-8 pt-10 bg-green-soft text-white col-start-4 col-end-6 rounded-lg;
+    transform: translateY(-50%);
+    h5 {
+      @apply text-h6 font-bold mt-6;
     }
   }
 }
