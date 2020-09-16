@@ -14,8 +14,6 @@
 
 @import "pages/page";
 
-@import "base/helpers";
-
 @tailwind utilities;
 
 body {
@@ -183,7 +181,7 @@ nav {
   }
   //=== END OF FORM ===
 }
-.right-banner {
+.featured {
   @apply w-main-plus ml-auto mr-0 bg-green-bg rounded-l-2xl p-20 pr-24 z-20;
   transform: translateY(-10rem);
   margin-bottom: -5rem;
@@ -198,7 +196,7 @@ nav {
   }
 }
 #about-us {
-  @apply w-main h-screen pb-16 bg-white z-0 mx-auto;
+  @apply w-main pb-24 bg-white z-0 mx-auto;
   .col-2 {
     @apply flex flex-row w-full mx-auto;
     .images {
@@ -274,13 +272,96 @@ nav {
   @apply grid w-main grid-cols-5 mx-auto relative;
   .decor {
     @apply col-start-1 col-end-2 absolute w-full;
-    transform: translateY(50%);
+    transform: translateY(90px);
   }
   #blue-box {
     @apply pl-12 pr-10 pb-8 pt-10 bg-green-soft text-white col-start-4 col-end-6 rounded-lg;
     transform: translateY(-50%);
     h5 {
       @apply text-h6 font-bold mt-6;
+    }
+  }
+}
+#find-hotel {
+  @apply w-main mx-auto pt-40 pb-32;
+  .wrapper {
+    @apply w-3/5 px-8 pb-24 mx-auto text-center;
+    h2 {
+      @apply text-h4 font-bold mb-8;
+    }
+    p {
+      @apply text-grey-dark mb-10;
+    }
+    .orange-btn {
+      @apply w-auto py-4 px-10 font-medium;
+    }
+  }
+  .cards {
+    @apply grid grid-cols-4 gap-6;
+    .card {
+      @apply rounded-xl bg-white flex flex-col overflow-hidden;
+      .card-img {
+        @apply max-w-full;
+      }
+      .text-box {
+        @apply border-grey-lighter border-solid border-2 py-6 px-5 rounded-b-xl;
+        h3 {
+          @apply text-h6 font-bold;
+        }
+        p {
+          @apply text-grey-dark font-normal;
+        }
+      }
+    }
+    .card.blue {
+      .text-box {
+        @apply border-none bg-green-soft;
+        h3,
+        p {
+          @apply text-white;
+        }
+      }
+    }
+  }
+}
+#opinion {
+  @apply w-full bg-green-soft pt-32 pb-40;
+  .box {
+    @apply w-main mx-auto flex flex-row;
+    height: 470px;
+    .col-1 {
+      @apply w-2/5 rounded-xl overflow-hidden;
+      max-width: 500px;
+    }
+    .col-2 {
+      @apply w-3/5 p-12 ml-16;
+      background-color: rgba(255, 255, 255, 0.4);
+      h3 {
+        @apply text-h5 font-bold text-white;
+      }
+      span {
+        @apply text-white;
+      }
+      p {
+        @apply text-h6 py-6 leading-10 text-white;
+      }
+    }
+  }
+}
+footer {
+  @apply w-full bg-green-bg relative;
+  #contact-us {
+    @apply absolute w-main p-12 bg-white rounded-xl;
+    transform: translateY(-50%);
+    margin: 0 9.5%;
+  }
+  #bottom {
+    @apply w-main mx-auto py-32;
+    .left {
+      @apply float-left;
+    }
+    .right {
+      @apply float-right;
     }
   }
 }

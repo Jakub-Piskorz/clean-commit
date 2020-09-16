@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import DefaultSEO from "@/components/DefaultSEO";
 import DatePicker from "react-datepicker";
@@ -162,7 +162,7 @@ const HomePage = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="right-banner">
+      <div className="featured">
         <div className="col-3">
           <Img
             className="mr-10"
@@ -261,6 +261,86 @@ const HomePage = ({ data }) => {
           </div>
         </div>
       </div>
+      <div id="find-hotel">
+        <div className="wrapper">
+          <h2>Find your best hotel</h2>
+          <p>
+            Ullamcorper cras imperdiet eu feugiat viverra pulvinar. Gravida
+            integer tincidunt pretium dis fames porttitor velit. Volutpat
+            tincidunt{" "}
+          </p>
+          <button className="orange-btn">View All</button>
+        </div>
+        <div className="cards">
+          <Link to="/hotel-de-luna" className="card">
+            <Img
+              className="card-img"
+              fluid={data.beach.childImageSharp.fluid}
+            />
+            <div className="text-box">
+              <h3>Hotel De'Luna</h3>
+              <p>Singapore</p>
+            </div>
+          </Link>
+          <Link to="/ina-tretes-hotel" className="card blue">
+            <Img
+              className="card-img"
+              fluid={data.beach.childImageSharp.fluid}
+            />
+            <div className="text-box">
+              <h3>Ina Tretes Hotel</h3>
+              <p>Singapore</p>
+            </div>
+          </Link>
+          <Link to="/de-light-hotel" className="card">
+            <Img
+              className="card-img"
+              fluid={data.beach.childImageSharp.fluid}
+            />
+            <div className="text-box">
+              <h3>De'light Hotel</h3>
+              <p>Singapore</p>
+            </div>
+          </Link>
+          <Link to="/mercusuar-tower" className="card">
+            <Img
+              className="card-img"
+              fluid={data.beach.childImageSharp.fluid}
+            />
+            <div className="text-box">
+              <h3>Mercusuar Tower</h3>
+              <p>Singapore</p>
+            </div>
+          </Link>
+        </div>
+      </div>
+      <div id="opinion">
+        <div className="box">
+          <div className="col-1">
+            <Img className="pic" fluid={data.beach.childImageSharp.fluid} />
+          </div>
+          <div className="col-2">
+            <h3>Robert Rene</h3>
+            <span className="subtext text-white">Singapore</span>
+            <p>
+              Aliquet tincidunt urna congue lectus sodales volutpat, in
+              venenatis. In pellentesque est iaculis tortor proin eleifend ipsum
+              nunc, sed. At malesuada fusce egestas placerat diam justo. At
+              arcu, arcu tempor ultrices scelerisque tempus consequat. Feugiat
+              id volutpat congue natoque sodales eleifend mattis posuere. Auctor
+              viverra pulvinar massa vitae condimentum in tristique. Sed sit eu,
+              eget pellentesque{" "}
+            </p>
+            <div className="stars" stars="5" locked>
+              *****
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div id="contact-us">contact us</div>
+        <div id="bottom">bottom</div>
+      </footer>
     </>
   );
 };
