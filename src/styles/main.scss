@@ -300,8 +300,9 @@ nav {
     @apply grid grid-cols-4 gap-6;
     .card {
       @apply rounded-xl bg-white flex flex-col overflow-hidden;
-      .card-img {
-        @apply max-w-full;
+      .card-img > div {
+        height: 0;
+        padding-bottom: 100% !important;
       }
       .text-box {
         @apply border-grey-lighter border-solid border-2 py-6 px-5 rounded-b-xl;
@@ -334,8 +335,8 @@ nav {
       max-width: 500px;
     }
     .col-2 {
-      @apply w-3/5 p-12 ml-16;
-      background-color: rgba(255, 255, 255, 0.4);
+      @apply w-3/5 p-12 ml-32;
+      background-color: rgba(255, 255, 255, 0.2);
       h3 {
         @apply text-h5 font-bold text-white;
       }
@@ -345,13 +346,16 @@ nav {
       p {
         @apply text-h6 py-6 leading-10 text-white;
       }
+      .rate > svg {
+        @apply float-left mr-2;
+      }
     }
   }
 }
 footer {
   @apply w-full bg-green-bg relative;
   #contact-us {
-    @apply absolute w-main p-12 bg-white rounded-xl;
+    @apply absolute w-main p-16 bg-white rounded-xl;
     transform: translateY(-50%);
     margin: 0 9.5%;
   }

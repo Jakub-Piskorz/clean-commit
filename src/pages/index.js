@@ -6,6 +6,7 @@ import DefaultSEO from "@/components/DefaultSEO";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "@/styles/main.scss";
+import Stars from "@/components/Stars";
 
 const HomePage = ({ data }) => {
   // Setting states for calendars in form.
@@ -58,8 +59,8 @@ const HomePage = ({ data }) => {
               <path
                 d="M217 4H22C12.0589 4 4 12.0589 4 22V115.355C4 123.334 10.4677 129.801 18.446 129.801C21.5154 129.801 24.1591 131.966 24.7651 134.975L26.6535 144.352C28.2599 152.328 38.2118 155.149 43.7652 149.203L58.9194 132.976C60.8105 130.951 63.4571 129.801 66.2279 129.801H217C226.941 129.801 235 121.742 235 111.801V22C235 12.0589 226.941 4 217 4Z"
                 stroke="white"
-                stroke-opacity="0.3"
-                stroke-width="8"
+                strokeOpacity="0.3"
+                strokeWidth="8"
               />
             </svg>
             <p>This hotel is like paradise! </p>
@@ -75,13 +76,13 @@ const HomePage = ({ data }) => {
               <path
                 d="M16 6H199C204.523 6 209 10.4772 209 16V90.3184C209 95.533 204.773 99.7603 199.558 99.7603C194.344 99.7603 190.116 103.988 190.116 109.202V113.904C190.116 117.385 185.978 119.205 183.413 116.852L168.79 103.442C166.208 101.074 162.832 99.7603 159.328 99.7603H16C10.4772 99.7603 6 95.2831 6 89.7603V16C6 10.4772 10.4772 6 16 6Z"
                 fill="white"
-                fill-opacity="0.8"
+                fillOpacity="0.8"
               />
               <path
                 d="M16 3H199C206.18 3 212 8.8203 212 16V90.3184C212 97.1899 206.43 102.76 199.558 102.76C196 102.76 193.116 105.644 193.116 109.202V113.904C193.116 119.996 185.874 123.18 181.385 119.063L166.763 105.653C164.734 103.793 162.081 102.76 159.328 102.76H16C8.8203 102.76 3 96.94 3 89.7603V16C3 8.8203 8.8203 3 16 3Z"
                 stroke="white"
-                stroke-opacity="0.4"
-                stroke-width="6"
+                strokeOpacity="0.4"
+                strokeWidth="6"
               />
             </svg>
 
@@ -131,7 +132,7 @@ const HomePage = ({ data }) => {
                   </div>
                 </div>
               </div>
-              <label for="guests-select">Guest</label>
+              <label htmlFor="guests-select">Guest</label>
               <br />
               <div id="guests-wrapper">
                 <select
@@ -148,7 +149,7 @@ const HomePage = ({ data }) => {
                 </select>
                 <span />
               </div>
-              <label id="pay-wrapper" for="pay">
+              <label id="pay-wrapper" htmlFor="pay">
                 <input type="checkbox" id="pay" value="pay" name="pay" />
                 <span id="pay-icon"></span>Pay when checking in?
               </label>
@@ -274,8 +275,10 @@ const HomePage = ({ data }) => {
         <div className="cards">
           <Link to="/hotel-de-luna" className="card">
             <Img
+              title="Hotel De'Luna"
+              alt="Hotel De'Luna"
               className="card-img"
-              fluid={data.beach.childImageSharp.fluid}
+              fluid={data.pool.childImageSharp.fluid}
             />
             <div className="text-box">
               <h3>Hotel De'Luna</h3>
@@ -284,8 +287,10 @@ const HomePage = ({ data }) => {
           </Link>
           <Link to="/ina-tretes-hotel" className="card blue">
             <Img
+              title="Ina Tretes Hotel"
+              alt="Ina Tretes Hotel"
               className="card-img"
-              fluid={data.beach.childImageSharp.fluid}
+              fluid={data.sanghai.childImageSharp.fluid}
             />
             <div className="text-box">
               <h3>Ina Tretes Hotel</h3>
@@ -294,6 +299,8 @@ const HomePage = ({ data }) => {
           </Link>
           <Link to="/de-light-hotel" className="card">
             <Img
+              title="De'light Hotel"
+              alt="De'light Hotel"
               className="card-img"
               fluid={data.beach.childImageSharp.fluid}
             />
@@ -304,8 +311,10 @@ const HomePage = ({ data }) => {
           </Link>
           <Link to="/mercusuar-tower" className="card">
             <Img
+              title="Mercusuar Tower"
+              alt="Mercusuar Tower"
               className="card-img"
-              fluid={data.beach.childImageSharp.fluid}
+              fluid={data.tower.childImageSharp.fluid}
             />
             <div className="text-box">
               <h3>Mercusuar Tower</h3>
@@ -326,14 +335,9 @@ const HomePage = ({ data }) => {
               Aliquet tincidunt urna congue lectus sodales volutpat, in
               venenatis. In pellentesque est iaculis tortor proin eleifend ipsum
               nunc, sed. At malesuada fusce egestas placerat diam justo. At
-              arcu, arcu tempor ultrices scelerisque tempus consequat. Feugiat
-              id volutpat congue natoque sodales eleifend mattis posuere. Auctor
-              viverra pulvinar massa vitae condimentum in tristique. Sed sit eu,
-              eget pellentesque{" "}
+              arcu, arcu tempor ultrices scelerisque tempus consequat.
             </p>
-            <div className="stars" stars="5" locked>
-              *****
-            </div>
+            <Stars fill="4" className="rate" />
           </div>
         </div>
       </div>
@@ -417,6 +421,20 @@ export const pageQuery = graphql`
     sanghai: file(base: { eq: "sanghai.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    pool: file(base: { eq: "pool.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    tower: file(base: { eq: "tower.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
         }
       }
