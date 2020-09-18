@@ -31,14 +31,14 @@ p {
 nav {
   @apply grid grid-cols-12 pt-20 w-main mx-auto text-white tracking-wide;
   .nav-left {
-    @apply flex text-h5 font-bold col-span-5 items-center;
+    @apply flex text-h5 font-bold col-span-6 items-center;
   }
   .nav-right {
-    @apply col-span-7 flex justify-between items-center;
-    li {
+    @apply col-span-6 flex justify-between items-center;
+    li > a {
       @apply font-normal;
     }
-    .login {
+    .login > a {
       @apply border-white border-solid border rounded-lg py-5 px-10 font-medium;
     }
   }
@@ -85,10 +85,11 @@ nav {
 }
 
 .top-screen {
-  @apply relative overflow-hidden flex flex-col;
+  @apply relative flex flex-col overflow-x-hidden;
   .bg {
-    @apply absolute z-m10 h-auto mx-auto justify-center min-w-full;
+    @apply absolute z-m10 mx-auto justify-center overflow-hidden min-w-full;
     top: -100px;
+    height: 109%;
     min-width: 110vw;
     width: 2050px;
     right: -10%;
@@ -326,7 +327,7 @@ nav {
   }
 }
 #opinion {
-  @apply w-full bg-green-soft pt-32 pb-40;
+  @apply w-full bg-green-soft pt-32 pb-64;
   .box {
     @apply w-main mx-auto flex flex-row;
     height: 470px;
@@ -359,17 +360,59 @@ nav {
 footer {
   @apply w-full bg-green-bg relative;
   #contact-us {
-    @apply absolute w-main p-16 bg-white rounded-xl;
+    @apply flex flex-row absolute w-main p-16 bg-white rounded-xl;
     transform: translateY(-50%);
     margin: 0 9.5%;
+    p {
+      @apply text-h6 text-grey-dark;
+    }
+    .col-1 {
+      width: 55%;
+      @apply pr-16;
+      h3 {
+        @apply text-h5 font-bold mb-2;
+        span {
+          @apply text-orange-main;
+        }
+      }
+      p {
+        @apply leading-10;
+      }
+    }
+    .col-2 {
+      width: 22.5%;
+      @apply px-4;
+      h3 {
+        @apply text-h6 font-bold mb-5;
+      }
+      p {
+        line-height: 3rem;
+      }
+      a {
+        @apply font-normal;
+      }
+    }
+    .col-3 {
+      width: 22.5%;
+      @apply px-4;
+      h3 {
+        @apply text-h6 font-bold mb-5;
+      }
+      p {
+        line-height: 3rem;
+      }
+    }
   }
   #bottom {
-    @apply w-main mx-auto py-32;
+    @apply w-main mx-auto pb-32 pt-64;
     .left {
-      @apply float-left;
+      @apply float-left font-bold text-h6;
     }
     .right {
       @apply float-right;
+      svg {
+        @apply float-left ml-8;
+      }
     }
   }
 }
