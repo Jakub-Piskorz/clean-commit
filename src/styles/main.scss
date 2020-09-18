@@ -333,6 +333,10 @@ nav {
     .col-1 {
       @apply w-2/5 rounded-xl overflow-hidden;
       max-width: 500px;
+      .pic > div {
+        height: 0;
+        padding-bottom: 100% !important;
+      }
     }
     .col-2 {
       @apply w-3/5 p-12 ml-32;

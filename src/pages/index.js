@@ -326,7 +326,7 @@ const HomePage = ({ data }) => {
       <div id="opinion">
         <div className="box">
           <div className="col-1">
-            <Img className="pic" fluid={data.beach.childImageSharp.fluid} />
+            <Img className="pic" fluid={data.landscape.childImageSharp.fluid} />
           </div>
           <div className="col-2">
             <h3>Robert Rene</h3>
@@ -435,6 +435,13 @@ export const pageQuery = graphql`
     tower: file(base: { eq: "tower.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    landscape: file(base: { eq: "landscape.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
