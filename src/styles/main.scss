@@ -36,10 +36,10 @@ nav {
   .nav-right {
     @apply col-span-6 flex justify-between items-center;
     li > a {
-      @apply font-normal;
+      @apply font-normal hidden;
     }
     .login > a {
-      @apply border-white border-solid border rounded-lg py-5 px-10 font-medium;
+      @apply inline-block border-white border-solid border rounded-lg py-5 px-10 font-medium;
     }
   }
 }
@@ -57,19 +57,19 @@ nav {
 #home {
   @apply w-main mx-auto flex flex-grow relative;
   #icon1 {
-    @apply absolute w-24 z-0;
+    @apply absolute w-24 z-0 hidden;
     top: 9vw;
     right: 40%;
   }
   #icon2 {
-    @apply absolute overflow-hidden z-10 right-0 flex items-center justify-center;
+    @apply absolute overflow-hidden z-10 right-0 items-center justify-center hidden;
     top: 150px;
     p {
       @apply absolute px-10 pt-6 pb-12 leading-8 text-h6 text-grey;
     }
   }
   #icon3 {
-    @apply absolute overflow-hidden z-10 flex items-center justify-center;
+    @apply absolute overflow-hidden z-10 items-center justify-center hidden;
     bottom: 250px;
     right: 35%;
     p {
@@ -77,7 +77,7 @@ nav {
     }
   }
   #icon4 {
-    @apply absolute w-24 z-0;
+    @apply absolute w-24 z-0 hidden;
     bottom: 230px;
     right: 7%;
     transform: rotate(45deg);
@@ -85,7 +85,7 @@ nav {
 }
 
 .top-screen {
-  @apply relative flex flex-col overflow-x-hidden;
+  @apply relative flex flex-col overflow-hidden;
   .bg {
     @apply absolute z-m10 mx-auto justify-center overflow-hidden min-w-full;
     top: -100px;
@@ -96,13 +96,13 @@ nav {
   }
   //=== FORM ===
   .hotel-form {
-    @apply self-center max-w-full bg-white rounded-xl z-10 p-10 mt-32 mb-64 ml-0 mr-auto;
+    @apply self-center max-w-full bg-white rounded-xl z-10 p-10 mt-32 mb-64 mx-auto;
     width: 487px;
     label {
       @apply font-bold leading-10;
     }
     .col-2 {
-      @apply grid grid-cols-2 gap-8;
+      @apply grid;
     }
     input[type="text"],
     select {
@@ -183,13 +183,13 @@ nav {
   //=== END OF FORM ===
 }
 .featured {
-  @apply w-main-plus ml-auto mr-0 bg-green-bg rounded-l-2xl p-20 pr-24 z-20;
+  @apply w-main mx-auto bg-green-bg py-10 rounded-xl px-6 z-20;
   transform: translateY(-10rem);
   margin-bottom: -5rem;
   .col-3 {
-    @apply flex flex-row items-center;
+    @apply flex flex-col items-center text-center;
     .big {
-      @apply mr-10 text-h4 font-bold text-green-soft w-3/4;
+      @apply text-h4 my-6 font-bold text-green-soft w-3/4;
     }
     p {
       @apply text-green-soft;
@@ -201,7 +201,7 @@ nav {
   .col-2 {
     @apply flex flex-row w-full mx-auto;
     .images {
-      @apply pr-16 pt-16 pb-16 relative;
+      @apply pr-16 pt-16 pb-16 relative h-full;
       width: 50%;
       max-width: 600px;
       #decoration {
@@ -414,5 +414,44 @@ footer {
         @apply float-left ml-8;
       }
     }
+  }
+}
+@screen sm {
+  .top-screen .hotel-form .col-2 {
+    @apply grid-cols-2 gap-8;
+  }
+}
+
+@screen lg {
+  #home {
+    #icon1,
+    #icon2,
+    #icon3,
+    #icon4 {
+      @apply flex;
+    }
+  }
+  .top-screen {
+    .hotel-form {
+      @apply ml-0;
+      .col-2 {
+        @apply grid-cols-2 gap-8;
+      }
+    }
+  }
+  .featured {
+    @apply mr-0 w-main-plus p-20 rounded-l-2xl;
+    .col-3 {
+      @apply flex-row;
+      .big {
+        @apply mr-10 my-0;
+      }
+    }
+  }
+}
+
+@screen xl {
+  nav .nav-right li > a {
+    @apply inline-block;
   }
 }

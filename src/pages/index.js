@@ -176,7 +176,7 @@ const HomePage = ({ data }) => {
       <div className="featured">
         <div className="col-3">
           <Img
-            className="mr-10"
+            className="lg:mr-10"
             style={{ minWidth: "90px" }}
             fluid={data.heart.childImageSharp.fluid}
           />
@@ -464,7 +464,7 @@ HomePage.propTypes = {
 };
 
 // Warning: spaghetti code. My graphql knowledge is pretty basic,
-//but if I can query it easier, please let me know.
+// but if I can query it easier, please let me know.
 export const pageQuery = graphql`
   query HomePageTemplate {
     background: file(base: { eq: "hotel-main.jpeg" }) {

@@ -1,5 +1,5 @@
 {
-  "name": "Hotely",
+  "name": "hotely",
   "description": "Recruitment task for Clean-Commit",
   "version": "0.3.0",
   "author": "Jakub Piskorz",
@@ -7,7 +7,7 @@
     "classnames": "^2.2.6",
     "gatsby": "^2.23.1",
     "gatsby-image": "^2.0.23",
-    "gatsby-plugin-advanced-sitemap": "^1.4.5",
+    "gatsby-plugin-advanced-sitemap": "^1.5.6",
     "gatsby-plugin-gdpr-cookies": "^1.0.3",
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-netlify-cms": "^4.1.6",
@@ -15,12 +15,11 @@
     "gatsby-plugin-react-helmet": "^3.0.4",
     "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sass": "^2.0.7",
-    "gatsby-plugin-sharp": "^2.2.9",
     "gatsby-remark-copy-linked-files": "^2.0.7",
-    "gatsby-remark-images": "^3.3.2",
+    "gatsby-remark-images": "^3.3.30",
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-filesystem": "^2.0.26",
-    "gatsby-transformer-remark": "^2.6.37",
+    "gatsby-transformer-remark": "^2.8.35",
     "gatsby-transformer-sharp": "^2.1.9",
     "google-maps-react": "^2.0.6",
     "lodash": "^4.17.15",
@@ -60,6 +59,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "gatsby-plugin-sharp": "^2.6.36",
     "prettier": "^1.15.3",
     "tailwindcss": "1.3.1"
   }
