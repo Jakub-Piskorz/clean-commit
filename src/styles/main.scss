@@ -17,7 +17,7 @@
 @tailwind utilities;
 
 body {
-  @apply box-border;
+  @apply box-border bg-white;
 }
 
 p {
@@ -29,7 +29,7 @@ p {
 }
 
 nav {
-  @apply grid grid-cols-12 pt-20 w-main mx-auto text-white tracking-wide;
+  @apply grid grid-cols-12 pt-10 w-main mx-auto text-white tracking-wide;
   .nav-left {
     @apply flex text-h5 font-bold col-span-6 items-center;
   }
@@ -96,7 +96,7 @@ nav {
   }
   //=== FORM ===
   .hotel-form {
-    @apply self-center max-w-full bg-white rounded-xl z-10 p-10 mt-32 mb-64 mx-auto;
+    @apply self-center max-w-full bg-white rounded-xl z-10 p-10 mt-10 mb-64 mx-auto;
     width: 487px;
     label {
       @apply font-bold leading-10;
@@ -197,26 +197,24 @@ nav {
   }
 }
 #about-us {
-  @apply w-main pb-24 bg-white z-0 mx-auto;
+  @apply pb-24 w-full bg-white z-0 mx-auto px-10;
   .col-2 {
-    @apply flex flex-row w-full mx-auto;
+    @apply flex flex-col w-full mx-auto;
     .images {
-      @apply pr-16 pt-16 pb-16 relative h-full;
-      width: 50%;
-      max-width: 600px;
+      @apply pr-16 pt-16 pb-16 relative h-full w-full;
       #decoration {
         @apply absolute top-0 right-0 w-40 h-40;
       }
       #orange {
         @apply absolute bottom-0 right-0 w-56;
+        max-width: 40%;
         img {
           @apply rounded-lg;
         }
       }
     }
     .content {
-      @apply flex flex-col items-start justify-center w-auto pl-24 pt-20 pr-10;
-      max-width: 60%;
+      @apply flex flex-col items-start justify-center pl-24 pt-20 pr-10 w-full;
       .orange-btn {
         @apply py-4;
       }
@@ -433,7 +431,7 @@ footer {
   }
   .top-screen {
     .hotel-form {
-      @apply ml-0;
+      @apply ml-0 mt-32;
       .col-2 {
         @apply grid-cols-2 gap-8;
       }
@@ -448,10 +446,27 @@ footer {
       }
     }
   }
+  #about-us {
+    @apply w-main px-0;
+    .col-2 {
+      @apply flex-row;
+      .images {
+        @apply mx-8 w-auto;
+        max-width: 600px;
+      }
+      .content {
+        @apply w-auto;
+        max-width: 60%;
+      }
+    }
+  }
 }
 
 @screen xl {
-  nav .nav-right li > a {
-    @apply inline-block;
+  nav {
+    @apply pt-20;
+    .nav-right li > a {
+      @apply inline-block;
+    }
   }
 }
