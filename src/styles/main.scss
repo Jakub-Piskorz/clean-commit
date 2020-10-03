@@ -48,7 +48,7 @@ nav {
   @apply bg-orange-main w-full text-white leading-8 font-bold p-6 rounded-xl;
 }
 .not-btn {
-  @apply px-10 py-4 inline;
+  @apply p-10 inline;
   span {
     @apply font-bold text-h5;
   }
@@ -199,9 +199,11 @@ nav {
 #about-us {
   @apply pb-24 w-full bg-white z-0 mx-auto px-10;
   .col-2 {
-    @apply flex flex-col w-full mx-auto;
+    @apply flex flex-col w-full mx-auto items-center;
     .images {
-      @apply pr-16 pt-16 pb-16 relative h-full w-full;
+      @apply p-16 relative h-full;
+      width: 500px;
+      max-width: 85%;
       #decoration {
         @apply absolute top-0 right-0 w-40 h-40;
       }
@@ -214,7 +216,8 @@ nav {
       }
     }
     .content {
-      @apply flex flex-col items-start justify-center pl-24 pt-20 pr-10 w-full;
+      @apply flex flex-col items-start justify-center pt-20 mx-auto;
+      width: 90%;
       .orange-btn {
         @apply py-4;
       }
@@ -242,7 +245,7 @@ nav {
   }
 }
 #sanghai {
-  @apply flex flex-row w-main-plus ml-auto mr-0 pt-40;
+  @apply w-main flex flex-col-reverse pt-32 mx-auto;
   h2 {
     @apply text-h4 font-bold mt-2;
   }
@@ -259,32 +262,30 @@ nav {
     }
   }
   .col-right {
-    max-width: 68%;
+    @apply rounded-xl pb-16;
     .pic {
-      @apply rounded-l-xl;
-      width: 905px;
-      max-width: 100%;
+      @apply w-full rounded-xl;
     }
   }
 }
 #blue-box-wrapper {
-  @apply grid w-main grid-cols-5 mx-auto relative;
+  @apply grid w-main grid-cols-1 mx-auto relative mt-16 pb-32;
   .decor {
-    @apply col-start-1 col-end-2 absolute w-full;
+    @apply hidden;
     transform: translateY(90px);
   }
   #blue-box {
-    @apply pl-12 pr-10 pb-8 pt-10 bg-green-soft text-white col-start-4 col-end-6 rounded-lg;
-    transform: translateY(-50%);
+    @apply pl-12 pr-10 pb-8 pt-10 bg-green-soft text-white rounded-lg;
     h5 {
       @apply text-h6 font-bold mt-6;
     }
   }
 }
 #find-hotel {
-  @apply w-main mx-auto pt-40 pb-32;
+  @apply w-main mx-auto py-32;
   .wrapper {
-    @apply w-3/5 px-8 pb-24 mx-auto text-center;
+    @apply w-full pb-32 mx-auto text-center;
+    max-width: 600px;
     h2 {
       @apply text-h4 font-bold mb-8;
     }
@@ -296,7 +297,7 @@ nav {
     }
   }
   .cards {
-    @apply grid grid-cols-4 gap-6;
+    @apply grid grid-cols-1 gap-6;
     .card {
       @apply rounded-xl bg-white flex flex-col overflow-hidden;
       .card-img > div {
@@ -327,18 +328,19 @@ nav {
 #opinion {
   @apply w-full bg-green-soft pt-32 pb-64;
   .box {
-    @apply w-main mx-auto flex flex-row;
-    height: 470px;
+    @apply w-main mx-auto flex flex-col items-center pb-16;
+    min-height: 470px;
     .col-1 {
-      @apply w-2/5 rounded-xl overflow-hidden;
-      max-width: 500px;
+      @apply pb-16 max-w-full max-h-full;
+      width: 500px;
       .pic > div {
         height: 0;
         padding-bottom: 100% !important;
       }
     }
     .col-2 {
-      @apply w-3/5 p-12 ml-32;
+      @apply w-full p-12;
+      min-height: 400px;
       background-color: rgba(255, 255, 255, 0.2);
       h3 {
         @apply text-h5 font-bold text-white;
@@ -356,30 +358,25 @@ nav {
   }
 }
 footer {
-  @apply w-full bg-green-bg relative;
+  @apply w-full bg-green-bg;
   #contact-us {
-    @apply flex flex-row absolute w-main p-16 bg-white rounded-xl;
-    transform: translateY(-50%);
-    margin: 0 9.5%;
+    @apply flex flex-col w-main p-8 bg-white rounded-xl;
+    transform: translateY(-200px);
+    margin: 0 9.5% -200px;
     p {
-      @apply text-h6 text-grey-dark;
+      @apply text-grey-dark text-base leading-6;
     }
     .col-1 {
-      width: 55%;
-      @apply pr-16;
+      @apply mb-6;
       h3 {
         @apply text-h5 font-bold mb-2;
         span {
           @apply text-orange-main;
         }
       }
-      p {
-        @apply leading-10;
-      }
     }
     .col-2 {
-      width: 22.5%;
-      @apply px-4;
+      @apply mb-6;
       h3 {
         @apply text-h6 font-bold mb-5;
       }
@@ -391,8 +388,7 @@ footer {
       }
     }
     .col-3 {
-      width: 22.5%;
-      @apply px-4;
+      @apply mb-6;
       h3 {
         @apply text-h6 font-bold mb-5;
       }
@@ -402,21 +398,25 @@ footer {
     }
   }
   #bottom {
-    @apply w-main mx-auto pb-32 pt-64;
+    @apply flex flex-col items-center w-main mx-auto py-16 text-center leading-10;
     .left {
-      @apply float-left font-bold text-h6;
+      @apply float-left font-bold text-h6 pb-8;
     }
     .right {
-      @apply float-right;
-      svg {
-        @apply float-left ml-8;
-      }
+      @apply inline-flex flex-row justify-between mx-auto;
+      width: 130px;
+    }
+    .right {
+      @apply flex;
     }
   }
 }
 @screen sm {
   .top-screen .hotel-form .col-2 {
     @apply grid-cols-2 gap-8;
+  }
+  #find-hotel .cards {
+    @apply grid-cols-2;
   }
 }
 
@@ -447,16 +447,88 @@ footer {
     }
   }
   #about-us {
-    @apply w-main px-0;
+    @apply w-main pr-10 px-0;
     .col-2 {
       @apply flex-row;
       .images {
-        @apply mx-8 w-auto;
-        max-width: 600px;
+        @apply mx-8 w-full pl-0;
+        max-width: 800px;
       }
       .content {
-        @apply w-auto;
-        max-width: 60%;
+        @apply w-auto pl-24;
+        max-width: 50%;
+      }
+    }
+  }
+  #sanghai {
+    @apply flex-row w-main-plus ml-auto mr-0;
+    .col-right {
+      @apply rounded-l-xl;
+      max-width: 68%;
+      .pic {
+        @apply rounded-l-xl;
+        width: 905px;
+        max-width: 100%;
+      }
+    }
+  }
+  #blue-box-wrapper {
+    @apply grid-cols-5 mt-0 pb-0;
+    #blue-box {
+      @apply col-start-4 col-end-6;
+      transform: translateY(-50%);
+    }
+    .decor {
+      @apply inline-block col-start-1 col-end-2 absolute w-full;
+    }
+  }
+  #find-hotel {
+    @apply pt-32;
+    .wrapper {
+      @apply px-8;
+    }
+    .cards {
+      @apply grid-cols-3;
+    }
+  }
+  #opinion {
+    .box {
+      @apply flex-row;
+      .col-1 {
+        @apply w-2/5 overflow-hidden pb-0;
+      }
+      .col-2 {
+        @apply w-3/5 ml-32;
+      }
+    }
+  }
+  footer {
+    @apply text-base;
+    #contact-us {
+      @apply flex-row p-16;
+      .col-1 {
+        width: 55%;
+        @apply pr-16;
+      }
+      .col-2 {
+        width: 22.5%;
+        @apply px-4;
+      }
+      .col-3 {
+        width: 22.5%;
+        @apply px-4;
+      }
+      p {
+        @apply text-h6 leading-10;
+      }
+    }
+    #bottom {
+      @apply flex-row justify-between;
+      .left {
+        @apply pb-0;
+      }
+      .right {
+        @apply mx-0;
       }
     }
   }
@@ -467,6 +539,11 @@ footer {
     @apply pt-20;
     .nav-right li > a {
       @apply inline-block;
+    }
+  }
+  #find-hotel {
+    .cards {
+      @apply grid-cols-4;
     }
   }
 }

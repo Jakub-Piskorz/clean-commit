@@ -192,7 +192,7 @@ const HomePage = ({ data }) => {
         <div className="col-2">
           <div className="images">
             <Img
-              className="rounded-xl"
+              className="rounded-xl w-full"
               fluid={data.beach.childImageSharp.fluid}
               title="Beach"
               alt="Beach"
@@ -336,7 +336,10 @@ const HomePage = ({ data }) => {
       <div id="opinion">
         <div className="box">
           <div className="col-1">
-            <Img className="pic" fluid={data.landscape.childImageSharp.fluid} />
+            <Img
+              className="pic rounded-xl"
+              fluid={data.landscape.childImageSharp.fluid}
+            />
           </div>
           <div className="col-2">
             <h3>Robert Rene</h3>
@@ -386,7 +389,7 @@ const HomePage = ({ data }) => {
         </div>
         <div id="bottom">
           <div className="left">
-            Designed by: Clean-Commit, Coded by: Jakub Piskorz
+            Designed by: Clean-Commit, coded by: Jakub Piskorz
           </div>
           <div className="right">
             <svg
