@@ -1,20 +1,21 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { graphql, Link } from "gatsby";
-import Img from "gatsby-image";
-import DefaultSEO from "@/components/DefaultSEO";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import "@/styles/main.scss";
-import Stars from "@/components/Stars";
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { graphql, Link } from 'gatsby'
+import Img from 'gatsby-image'
+import DefaultSEO from '@/components/DefaultSEO'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
+
+import '@/styles/main.scss'
+import Stars from '@/components/Stars'
 
 const HomePage = ({ data }) => {
   // Setting states for calendars in form.
   // checkIn = today; checkOut = today + 3 days;
-  const [checkIn, setCheckIn] = useState(new Date());
+  const [checkIn, setCheckIn] = useState(new Date())
   const [checkOut, setCheckOut] = useState(
     new Date().setDate(new Date().getDate() + 3)
-  );
+  )
 
   return (
     <>
@@ -50,7 +51,7 @@ const HomePage = ({ data }) => {
           <div id="icon1">
             <Img
               className="mr-10"
-              style={{ minWidth: "90px" }}
+              style={{ minWidth: '90px' }}
               fluid={data.heart2.childImageSharp.fluid}
             />
           </div>
@@ -100,7 +101,7 @@ const HomePage = ({ data }) => {
           </div>
           <div id="icon4">
             <Img
-              style={{ minWidth: "115px" }}
+              style={{ minWidth: '115px' }}
               fluid={data.heart2.childImageSharp.fluid}
             />
           </div>
@@ -177,7 +178,7 @@ const HomePage = ({ data }) => {
         <div className="col-3">
           <Img
             className="lg:mr-10"
-            style={{ minWidth: "90px" }}
+            style={{ minWidth: '90px' }}
             fluid={data.heart.childImageSharp.fluid}
           />
           <h4 className="big">Take less than 1 Minutes to book a room</h4>
@@ -227,10 +228,10 @@ const HomePage = ({ data }) => {
             <p>
               suspendisse porttitor. Augue consequat, eu dictum felis. Ipsum
               gravida fermentum vel lectus cursus. Purus arcu, fermentum in
-              gravida{" "}
+              gravida{' '}
               <strong>
                 <u>fermentum vel</u>
-              </strong>{" "}
+              </strong>{' '}
               lectus cursus. Purus arcu, fermentum in
             </p>
             <button className="orange-btn w-auto">Explore More</button>
@@ -245,7 +246,7 @@ const HomePage = ({ data }) => {
             <p>
               Ullamcorper cras imperdiet eu feugiat viverra pulvinar. Gravida
               integer tincidunt pretium dis fames porttitor velit. Volutpat
-              tincidunt{" "}
+              tincidunt{' '}
             </p>
             <button className="orange-btn">Book Now</button>
             <div className="not-btn">
@@ -278,7 +279,7 @@ const HomePage = ({ data }) => {
           <p>
             Ullamcorper cras imperdiet eu feugiat viverra pulvinar. Gravida
             integer tincidunt pretium dis fames porttitor velit. Volutpat
-            tincidunt{" "}
+            tincidunt{' '}
           </p>
           <button className="orange-btn">View All</button>
         </div>
@@ -362,7 +363,7 @@ const HomePage = ({ data }) => {
             </h3>
             <p>
               Nunc, lobortis cras vulputate faucibus dictumst. Viverra sit nec
-              pellentesque mattis. Ipsum amet nunc bibendum ut. Aliquam ut lorem{" "}
+              pellentesque mattis. Ipsum amet nunc bibendum ut. Aliquam ut lorem{' '}
             </p>
           </div>
           <div className="col-2">
@@ -455,8 +456,8 @@ const HomePage = ({ data }) => {
         </div>
       </footer>
     </>
-  );
-};
+  )
+}
 
 HomePage.propTypes = {
   data: PropTypes.shape({
@@ -464,7 +465,7 @@ HomePage.propTypes = {
       frontmatter: PropTypes.object
     })
   })
-};
+}
 
 // Warning: spaghetti code. My graphql knowledge is pretty basic,
 // but if I can query it easier, please let me know.
@@ -556,6 +557,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
 
-export default HomePage;
+export default HomePage
